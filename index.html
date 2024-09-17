@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Site</title>
-</head>
-<body>
-    <input type="text" placeholder="name">
+  </head>
+  <body>
+    <label for="name">Input your name (can be changed later)</label>
+    <input type="text" placeholder="name" id="name" />
 
-    <button onclick="proceed()">
-        Play
-    </button>
+    <br><button onclick="proceed()">Let's go!</button>
 
     <script>
-        function proceed() {
-            window.location.href = "./pages/ep_1.html";
-        }
+      function proceed() {
+        localStorage.setItem("name") == nameElement.innerHTML;
+        window.location.href = "./pages/language.html";
+      }
+
+      var nameElement = document.getElementById("name");
+      nameElement.innerHTML =
+        localStorage.getItem("name") != null ||
+        localStorage.getItem("name") != undefined
+          ? localStorage.getItem("name")
+          : "";
     </script>
-    
-</body>
+  </body>
 </html>
